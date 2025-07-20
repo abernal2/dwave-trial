@@ -1,0 +1,92 @@
+Home_Store,employee_id,Department,Primary_Job,rank_level,seniority_date,Shift_Strategy,shift_strategy_type_code,weekly_hours_min,weekly_hours_max,max_consecutive_days,min_hours_between_shifts,sequence_number_priority,strict_weekly_hours_min
+1846,1435538,Bakery,Asst. Bakery Manager,3,6/8/2019,Retail - Manager Shift Strategy,variable,45,45,6,10,6,45
+1846,1047459,Bakery,Baker,2,6/3/2000,Retail - Std FT Shift Strategy,variable,40,40,5,10,1,40
+1846,1463923,Bakery,Baker,2,4/15/2017,Retail - Std FT Shift Strategy,variable,40,40,5,10,1,40
+1846,1443238,Bakery,Baker,2,6/26/2021,Retail - Std FT Shift Strategy,variable,40,40,5,10,1,40
+1846,2127666,Bakery,Bakery Apprentice,3,6/22/2024,Retail - Std FT Shift Strategy,variable,40,40,5,10,1,40
+1846,2109787,Bakery,Bakery Apprentice,3,12/9/2023,Retail - Std PT Shift Strategy,variable,15,34,5,10,4,0
+1846,2107454,Bakery,Bakery Clerk,2,11/25/2023,Retail - Std PT Shift Strategy,variable,15,34,5,10,4,0
+1846,2104373,Bakery,Bakery Clerk,2,11/25/2023,Retail - Std PT Shift Strategy,variable,15,34,5,10,4,0
+1846,2104363,Bakery,Bakery Clerk,3,11/25/2023,Retail - Std PT Shift Strategy,variable,15,34,5,10,4,0
+1846,1927114,Bakery,Bakery Clerk,3,2/10/2024,Retail - Std PT Shift Strategy,variable,15,34,5,10,4,0
+1846,2128930,Bakery,Bakery Clerk,2,2/24/2024,Retail - Std PT Shift Strategy,variable,15,34,5,10,4,0
+1846,2127569,Bakery,Bakery Clerk,3,2/24/2024,Retail - Std PT Shift Strategy,variable,15,34,5,10,4,0
+1846,2184368,Bakery,Bakery Clerk,3,9/21/2024,Retail - Std PT Shift Strategy,variable,15,34,5,10,4,0
+1846,1259073,Bakery,Bakery Manager,3,2/16/2013,Retail - Manager Shift Strategy,variable,45,45,6,10,6,45
+1846,1799695,Bakery,Decorator,1,1/8/2022,Retail - Std FT Shift Strategy,variable,40,40,5,10,1,40
+1846,1941686,Bakery,Decorator,3,5/28/2022,Retail - Std FT Shift Strategy,variable,40,40,5,10,1,40
+1846,2019604,Bakery,Decorator,3,7/22/2023,Retail - Std FT Shift Strategy,variable,40,40,5,10,1,40
+1846,1743033,Bakery,Decorator,2,8/26/2023,Retail - Std FT Shift Strategy,variable,40,40,5,10,1,40
+1846,1169937,Customer Service,Asst. Cust Serv Mgr,2,3/21/2020,Retail - Manager Shift Strategy,,45,45,6,10,6,45
+1846,1167038,Customer Service,Asst. Store Manager,2,8/2/2014,Retail - Manager Shift Strategy,,45,45,6,10,6,45
+1846,2127638,Customer Service,Beverage Clerk,3,5/25/2024,Retail - Std FT Shift Strategy,,40,40,5,10,1,40
+1846,2109731,Customer Service,Beverage Clerk,2,6/22/2024,Retail - Std FT Shift Strategy,,40,40,5,10,1,40
+1846,1899906,Customer Service,Beverage Clerk,2,10/11/2023,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2127711,Customer Service,Beverage Clerk,3,2/23/2024,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2149386,Customer Service,Beverage Clerk,3,5/16/2024,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2107533,Customer Service,Beverage Clerk,3,6/29/2024,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2168197,Customer Service,Beverage Clerk,3,7/23/2024,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2107396,Customer Service,Cashier,3,12/9/2023,Retail - Short 2.25-8.00 hr Shift Strategy,,15,34,5,10,5,NULL
+1846,2178281,Customer Service,Cashier,3,9/28/2024,Retail - Std FT Shift Strategy,,40,40,5,10,1,40
+1846,2025588,Customer Service,Cashier,3,2/2/2023,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2035209,Customer Service,Cashier,3,3/14/2023,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2074687,Customer Service,Cashier,3,7/12/2023,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2107422,Customer Service,Cashier,2,12/9/2023,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2107430,Customer Service,Cashier,2,12/9/2023,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2107534,Customer Service,Cashier,2,12/9/2023,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2107601,Customer Service,Cashier,2,12/9/2023,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2107394,Customer Service,Cashier,2,12/9/2023,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2112148,Customer Service,Cashier,2,12/9/2023,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2109729,Customer Service,Cashier,3,12/9/2023,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2109798,Customer Service,Cashier,3,12/9/2023,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2107648,Customer Service,Cashier,3,12/9/2023,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2109720,Customer Service,Cashier,3,12/9/2023,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2107639,Customer Service,Cashier,3,12/16/2023,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2107427,Customer Service,Cashier,3,12/16/2023,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2114267,Customer Service,Cashier,3,1/2/2024,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2123326,Customer Service,Cashier,2,2/7/2024,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2127683,Customer Service,Cashier,2,2/23/2024,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2127562,Customer Service,Cashier,3,2/23/2024,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2127564,Customer Service,Cashier,3,2/24/2024,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2127582,Customer Service,Cashier,3,2/24/2024,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2129973,Customer Service,Cashier,3,2/24/2024,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2127632,Customer Service,Cashier,3,3/9/2024,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2160724,Customer Service,Cashier,3,6/18/2024,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2121403,Customer Service,Cashier,3,7/15/2024,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2183269,Customer Service,Cashier,3,9/19/2024,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,1235147,Customer Service,Cust Serv Team Leader,2,11/19/2016,Retail - Std FT Shift Strategy,,40,40,5,10,1,40
+1846,1781995,Customer Service,Cust Serv Team Leader,2,8/27/2022,Retail - Std FT Shift Strategy,,40,40,5,10,1,40
+1846,2110410,Customer Service,Cust Serv Team Leader,3,12/9/2023,Retail - Std FT Shift Strategy,,40,40,5,10,1,40
+1846,1177861,Customer Service,Customer Service Manager,2,10/25/2014,Retail - Manager Shift Strategy,,45,45,6,10,6,45
+1846,1719015,Customer Service,Customer Service Staff,3,9/11/2021,Retail - Std FT Shift Strategy,,40,40,5,10,1,40
+1846,1730840,Customer Service,Customer Service Staff,1,7/9/2022,Retail - Std FT Shift Strategy,,40,40,5,10,1,40
+1846,1590560,Customer Service,Customer Service Staff,2,3/18/2023,Retail - Std FT Shift Strategy,,40,40,5,10,1,40
+1846,2114192,Customer Service,Customer Service Staff,2,3/2/2024,Retail - Std FT Shift Strategy,,40,40,5,10,1,40
+1846,2109722,Customer Service,Customer Service Staff,3,3/2/2024,Retail - Std FT Shift Strategy,,40,40,5,10,1,40
+1846,2146253,Customer Service,Customer Service Staff,3,6/22/2024,Retail - Std FT Shift Strategy,,40,40,5,10,1,40
+1846,1739413,Customer Service,Customer Service Staff,2,4/11/2020,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,1098487,Customer Service,Customer Service Staff,3,8/15/2024,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2107634,Customer Service,Front Service Clerk,3,12/16/2023,Retail - Short 2.25-8.00 hr Shift Strategy,,15,34,5,10,5,NULL
+1846,2107438,Customer Service,Front Service Clerk,3,12/16/2023,Retail - Short 2.25-8.00 hr Shift Strategy,,15,34,5,10,5,NULL
+1846,2107629,Customer Service,Front Service Clerk,3,12/16/2023,Retail - Short 2.25-8.00 hr Shift Strategy,,15,34,5,10,5,NULL
+1846,2127568,Customer Service,Front Service Clerk,3,3/9/2024,Retail - Short 2.25-8.00 hr Shift Strategy,,15,34,5,10,5,NULL
+1846,2127586,Customer Service,Front Service Clerk,3,4/13/2024,Retail - Short 2.25-8.00 hr Shift Strategy,,15,34,5,10,5,NULL
+1846,2144766,Customer Service,Front Service Clerk,3,4/27/2024,Retail - Short 2.25-8.00 hr Shift Strategy,,15,34,5,10,5,NULL
+1846,2107630,Customer Service,Front Service Clerk,2,5/18/2024,Retail - Short 2.25-8.00 hr Shift Strategy,,15,34,5,10,5,NULL
+1846,2155239,Customer Service,Front Service Clerk,3,6/4/2024,Retail - Short 2.25-8.00 hr Shift Strategy,,15,34,5,10,5,NULL
+1846,2163839,Customer Service,Front Service Clerk,3,7/1/2024,Retail - Short 2.25-8.00 hr Shift Strategy,,15,34,5,10,5,NULL
+1846,2107410,Customer Service,Front Service Clerk,3,7/5/2024,Retail - Short 2.25-8.00 hr Shift Strategy,,15,34,5,10,5,NULL
+1846,2107447,Customer Service,Front Service Clerk,2,12/9/2023,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2107647,Customer Service,Front Service Clerk,2,12/16/2023,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2107374,Customer Service,Front Service Clerk,2,12/16/2023,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2107435,Customer Service,Front Service Clerk,2,12/16/2023,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2110464,Customer Service,Front Service Clerk,3,12/16/2023,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2111179,Customer Service,Front Service Clerk,3,12/16/2023,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2113039,Customer Service,Front Service Clerk,3,12/16/2023,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2127714,Customer Service,Front Service Clerk,3,2/23/2024,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2127716,Customer Service,Front Service Clerk,2,2/24/2024,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2127668,Customer Service,Front Service Clerk,3,2/24/2024,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2130107,Customer Service,Front Service Clerk,3,2/24/2024,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,2127585,Customer Service,Front Service Clerk,3,2/24/2024,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,1160771,Customer Service,Lead Beverage Clerk,1,8/4/2018,Retail - Std PT Shift Strategy,,15,34,5,10,4,0
+1846,1057475,Customer Service,Store Manager,1,6/1/1999,Retail - Manager Shift Strategy,,45,45,6,10,6,45
