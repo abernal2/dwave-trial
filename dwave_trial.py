@@ -59,7 +59,6 @@ JOB_ROLES_MAPPING = {
 def create_data_model(laborgen_path, associate_path, store_id: int = 10, department: str = 'Bakery') -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     """Creates the dataframes that describes the model."""
     laborgen = pd.read_csv(laborgen_path)
-    # assoc = pd.read_excel(associate_path, sheet_name='Sample_Associates')
     assoc = pd.read_csv(associate_path)
     assoc = assoc.loc[lambda f: (f[A.store] == store_id)&(f[A.dept_nm] == department)] #Chose random store which may be different from laborgen
 
@@ -142,12 +141,54 @@ def create_main_vars(model: Model, associate: pd.DataFrame, labor: pd.DataFrame,
             - main variable df at the most granular level
             - variable df at the daily level
     """
-    pass
+    x = []
+    emp_data_dic = associate.set_index(A.employee_id).to_dict('index')
+    num_unique_roles = labor[L.role_id].nunique()
+    roles_order = labor[L.role_id].unique()
+    lb = labor[L.period].min()
+    ub = labor[L.period].max()
+    for (day, emp), df in labor.groupby([L.day_num, A.employee_id]):
+        start = model.integer(
+            num_unique_roles, 
+            lower_bound=lb, 
+            upper_bound=ub
+        )
+        dur = model.integer(
+            num_unique_roles, 
+            lower_bound=0, 
+            upper_bound=PERIODS_PER_HR[granularity]*10
+        )
 
-def connect_main_and_daily_vars(model: Model, granular_variable_df: pd.DataFrame, 
-                        daily_variable_df: pd.DataFrame, associate: pd.DataFrame, 
-                        days_of_week: list[int] = [0], granularity: str = 'QH'):
-    pass
+        # creating shift vars
+        shift_start = minimum(start) #TODO
+        shift_end = maximum(start + dur) #TODO
+        x.append([day, emp, start, dur, shift_start, shift_end])
+    
+    cols = [
+        L.day_num, 
+        A.employee_id, 
+        M.role_start, 
+        M.role_duration, 
+        M.shiftStart, 
+        M.shiftEnd
+    ]
+    vars = pd.DataFrame(data=x, columns=cols)
+
+    return vars, roles_order
+
+def zero_out_role_vars(model: Model, vars: pd.DataFrame, associate: pd.DataFrame, job_role: pd.DataFrame, ordered_roles: list):
+    vars_dict = vars.set_index([L.day_num, A.employee_id]).to_dict('index')
+    
+    # Will zero out variables for roles which an employee cannot perform
+    for emp, job_name in associate[[A.employee_id, A.primary_job]].drop_duplicates().values:
+        df_job_role = job_role.loc[lambda f: f[A.job_name]==job_name]
+        for role in ordered_roles:
+            if role not in df_job_role[L.role_id].to_list():
+                empDaySet = [vars_dict[day, emp] for day in range(7)] 
+                # zeroing shift vars employees cannot work
+                for v in empDaySet:
+                    model.Add(v[M.role_start]==0)
+                    model.Add(v[M.role_duration]==0)
 
 def add_cumulative_constraints(
         model: Model, labor: pd.DataFrame, associate: pd.DataFrame, 
@@ -158,7 +199,17 @@ def add_cumulative_constraints(
         that many. Therefore, we create this constraint for each day in days_of_week 
         (which would be Sunday-Saturday in production) and role.
     """
-    pass
+    for 
+
+def add_role_continuity(model: Model, vars: pd.DataFrame, ordered_roles: list, associate: pd.DataFrame, job_role: pd.DataFrame, continuity: int, granularity: str = 'QH'):
+    vars_dict = vars.set_index([L.day_num, A.employee_id]).to_dict('index')
+
+    for emp, job_name in associate[[A.employee_id, A.primary_job]].drop_duplicates().values:
+        df_job_role = job_role.loc[lambda f: f[A.job_name]==job_name]
+        for role in ordered_roles:
+            if role in df_job_role[L.role_id].to_list():
+                for day in vars[L.day_num].unique():
+                    model.Add(vars_dict[day, emp][M.role_duration] >= continuity*PERIODS_PER_HR[granularity])
 
 def add_no_overlap_constraints(model: Model, variables: pd.DataFrame, 
                                daily_variables: pd.DataFrame, days_of_week: list[int] = [0]):
@@ -179,6 +230,54 @@ def add_weekly_hours(model: Model, variables: pd.DataFrame, associate: pd.DataFr
 def add_min_role_worktime(model: Model, variables: pd.DataFrame, min_role_hrs: int, 
                         days_of_week: list[int] = [0], granularity: str = 'QH'):
     pass
+
+def add_role_rank(model: Model, vars: pd.DataFrame, job_role: pd.DataFrame, associate: pd.DataFrame, roles_order: list):
+    cols = [L.role_id, 'num', M.slack]
+    slack_list = []
+ 
+    vars_dict = vars.set_index([L.day_num, A.employee_id]).to_dict('index')
+
+    job_role = job_role.loc[
+        lambda f: f[L.role_id].isin(roles_order),
+        [L.role_id, A.rank_level, A.job_name]
+    ]
+    associate = associate[[A.employee_id, A.primary_job]]
+    vars = vars.merge(
+            associate,
+            on=A.employee_id,
+            how='left'
+    )
+    vars = vars.merge(
+            job_role,
+            how='left',
+            left_on=[A.primary_job],
+            right_on=[A.job_name]
+    ).fillna({A.rank_level: 30})
+
+    for role in roles_order:
+        # sorted since small number means higher rank
+        kys = sorted(list(vars.loc[lambda f: f[L.role_id]==role, A.rank_level].unique()))
+        for k1, k2 in zip(kys, kys[1:]):
+            empSet1 = vars.loc[lambda f: f[A.rank_level] == k1, A.employee_id]
+            empSet2 = vars.loc[lambda f: f[A.rank_level] == k2, A.employee_id]
+            sumVar1 = [
+                vars_dict[daynum, emp][] 
+                    for daynum in range(7) 
+                    for emp in empSet1
+            ]
+            sumVar2 = [
+                vars_dict[daynum, emp][] 
+                    for daynum in range(7) 
+                    for emp in empSet2
+            ]
+            int_var = model.integer(
+                lb=0, ub = 100*HOURS_PER_DAY
+            )
+            slack_list.append([role, k1, int_var])
+            model.Add(var1.sum() >= var2.sum())
+       
+    slacks_df = pd.DataFrame(data=slack_list, columns=cols)
+    return slacks_df
 
 def add_objective(model: Model, variables: pd.DataFrame):
     pass
@@ -207,7 +306,7 @@ def main(laborgen_path: str, associate_path: str, store_id: int,
     start_date = laborgen[L.start_time].min()
     
     """
-        CP modeling begins with variable creation and next adding constraints
+        Dwave modeling begins with variable creation and next adding constraints
     """
     # Create the model.
     

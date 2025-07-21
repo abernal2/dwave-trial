@@ -16,8 +16,9 @@ class LaborGenColumns():
 
 @dataclass
 class ModelColumns():
-    start: str = 'start'
+    role_start: str = 'role_start'
     duration: str = 'duration'
+    role_duration: str = 'role_duration'
     end: str = 'end'
     performed: str = 'performed'
     interval: str = 'interval'
@@ -28,6 +29,9 @@ class ModelColumns():
     int_var: str = 'int_var'
     solution: str = 'solution'
     bool_xps: str = 'bool_xps'
+    slack: str = 'slack'
+    shiftStart: str = 'shiftStart'
+    shiftEnd: str = 'shiftEnd'
 
 @dataclass
 class ExtraColumns():
